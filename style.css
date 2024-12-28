@@ -5,17 +5,17 @@ body {
     color: #333;
     background-color: #f9f9f9;
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 15px;
     background-color: #333;
-    color: red;
+    color: white;
     font-size: 1.5rem;
     font-weight: bold;
     position: sticky;
@@ -24,7 +24,7 @@ body {
 }
 .nav-links {
     list-style: none;
-    display: none; /* Hidden by default */
+    display: none;
     flex-direction: column;
     background: white;
     position: absolute;
@@ -56,29 +56,38 @@ body {
 /* Hamburger Menu */
 .hamburger {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 15px;
+}
+.hamburger-box {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
     height: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
 }
-.hamburger span {
-    display: block;
+.hamburger-line {
+    background: #333;
     height: 3px;
-    width: 100%;
-    background: red;
     border-radius: 2px;
-    transition: background 0.3s, transform 0.3s;
+    transition: all 0.3s ease;
 }
-.hamburger.open span:nth-child(1) {
+.hamburger.open .hamburger-line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
-.hamburger.open span:nth-child(2) {
+.hamburger.open .hamburger-line:nth-child(2) {
     opacity: 0;
 }
-.hamburger.open span:nth-child(3) {
+.hamburger.open .hamburger-line:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
 
@@ -91,11 +100,12 @@ body {
     text-align: center;
     color: white;
     background: url('roses.jpg') no-repeat center center/cover;
-    padding: 15px; /* Padding for smaller screens */
+    padding: 15px;
 }
 .hero-content h1 {
     font-size: 2rem;
     margin-bottom: 15px;
+    color: white;
 }
 .hero-content p {
     font-size: 1.2rem;

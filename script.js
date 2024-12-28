@@ -11,7 +11,16 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', (event) => {
+    event.stopPropagation();
     navLinks.classList.toggle('active');
     hamburger.classList.toggle('open');
+});
+
+// Close dropdown menu when clicking anywhere else
+document.addEventListener('click', () => {
+    if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('open');
+    }
 });

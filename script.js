@@ -11,12 +11,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', (e) => {
+hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-    e.stopPropagation();
-});
-
-// Close the menu when clicking outside
-document.body.addEventListener('click', () => {
-    navLinks.classList.remove('active');
+    hamburger.classList.toggle('open');
 });

@@ -6,3 +6,12 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         target.scrollIntoView({ behavior: 'smooth' });
     });
 });
+
+// Toggle the dropdown menu for mobile view
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('open');
+});

@@ -5,7 +5,7 @@ body {
     color: #333;
     background-color: #f9f9f9;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Navbar */
@@ -15,22 +15,16 @@ body {
     align-items: center;
     padding: 15px;
     background-color: #333;
-    color: white;
+    color: red;
     font-size: 1.5rem;
     font-weight: bold;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
-.logo {
-    text-align: center;
-    flex: 1;
-    font-size: 2rem;
-    color: white;
-}
 .nav-links {
     list-style: none;
-    display: none;
+    display: none; /* Hidden by default */
     flex-direction: column;
     background: white;
     position: absolute;
@@ -61,23 +55,31 @@ body {
 
 /* Hamburger Menu */
 .hamburger {
-    width: 35px;
-    height: 35px;
-    background: white;
-    border: 1px solid #333;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    background: none;
+    border: none;
     cursor: pointer;
 }
-.icon-line {
-    width: 20px;
+.hamburger span {
+    display: block;
     height: 3px;
-    background: #333;
-    margin: 3px 0;
-    transition: transform 0.3s;
+    width: 100%;
+    background: red;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.3s;
+}
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -89,10 +91,10 @@ body {
     text-align: center;
     color: white;
     background: url('roses.jpg') no-repeat center center/cover;
-    padding: 15px;
+    padding: 15px; /* Padding for smaller screens */
 }
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 .hero-content p {
@@ -102,14 +104,14 @@ body {
 .cta-button {
     padding: 10px 20px;
     font-size: 1rem;
-    background: white;
-    color: #333;
+    background: red;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s;
 }
 .cta-button:hover {
-    background: #f4f4f4;
+    background: darkred;
 }
 
 /* Section Styles */

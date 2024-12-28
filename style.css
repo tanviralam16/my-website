@@ -5,11 +5,7 @@ body {
     color: #333;
     background-color: #f9f9f9;
     line-height: 1.6;
-}
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Navbar */
@@ -17,35 +13,49 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    background-color: #333;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 .nav-links {
     list-style: none;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.nav-links.active {
     display: flex;
-    margin: 0;
-    padding: 0;
 }
 .nav-links li {
-    margin: 0 15px;
+    margin: 10px 0;
+    text-align: center;
 }
 .nav-links a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    font-size: 1.2rem;
+    padding: 10px;
     transition: color 0.3s;
 }
 .nav-links a:hover {
     color: #007BFF;
 }
 
-/* Hamburger Menu Styles */
+/* Hamburger Menu */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
@@ -58,7 +68,7 @@ body {
     display: block;
     height: 3px;
     width: 100%;
-    background: #333;
+    background: red;
     border-radius: 2px;
     transition: background 0.3s, transform 0.3s;
 }
@@ -72,118 +82,48 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        overflow: hidden;
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .nav-links li {
-        margin: 10px 0;
-        text-align: center;
-    }
-    .hamburger {
-        display: flex;
-    }
-}
-
 /* Hero Section */
 .hero {
-    height: 100vh; /* Full screen height */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    background: url('roses.jpg') no-repeat center center/cover; /* Add your image */
+    background: url('roses.jpg') no-repeat center center/cover;
+    padding: 15px; /* Padding for smaller screens */
 }
 .hero-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 .hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 .cta-button {
     padding: 10px 20px;
     font-size: 1rem;
-    background: #007BFF;
+    background: red;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s;
 }
 .cta-button:hover {
-    background: #0056b3;
+    background: darkred;
 }
 
 /* Section Styles */
 section {
-    padding: 60px 0;
-}
-h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-.about p, .services p {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Services Section */
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-.service-item {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* Portfolio Section */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-.portfolio-item {
-    background: #ddd;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
+    padding: 40px 15px;
 }
 
 /* Footer */
 .footer {
     background: #333;
     color: white;
-    padding: 20px 0;
     text-align: center;
-}
-.footer .social-icons a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-}
-.footer .social-icons a:hover {
-    color: #007BFF;
+    padding: 15px 0;
+    font-size: 0.9rem;
 }
